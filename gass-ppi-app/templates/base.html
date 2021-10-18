@@ -6,12 +6,49 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/bootstrap.min.css') }}" />
+        <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/bootstrap-icons.css') }}" />
         <!-- Title (override) -->
         <title>{% block title %} {% endblock %}</title>
     </head>
     <body>
         <!-- Navigation Bar -->
-        <a href="{{ url_for('index') }}">Go back to home</a>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <!-- GASS-PPI Brand -->
+                <a class="navbar-brand" href="{{ url_for('index') }}">GASS-PPI</a>
+                <!-- Toggle Button -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#gassPpiMenuList" aria-controls="gassPpiMenuList" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!-- Menu List -->
+                <div class="collapse navbar-collapse" id="gassPpiMenuList">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="bi bi-search"></i> Protein-protein Interface Search
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav d-flex">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="bi bi-info-circle-fill"></i> Help
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="bi bi-envelope-fill"></i> Contact
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="bi bi-hand-thumbs-up-fill"></i> Acknowledgements
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
         <!-- Body (override) -->
         <div class="container">
             {% block content %} {% endblock %}
