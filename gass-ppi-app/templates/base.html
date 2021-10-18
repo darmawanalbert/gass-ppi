@@ -24,24 +24,24 @@
                 <div class="collapse navbar-collapse" id="gassPpiMenuList">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="{{ url_for('ppi_search') }}">
                                 <i class="bi bi-search"></i> Protein-protein Interface Search
                             </a>
                         </li>
                     </ul>
                     <ul class="navbar-nav d-flex">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="{{ url_for('help') }}">
                                 <i class="bi bi-info-circle-fill"></i> Help
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="{{ url_for('contact') }}">
                                 <i class="bi bi-envelope-fill"></i> Contact
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="{{ url_for('acknowledgements') }}">
                                 <i class="bi bi-hand-thumbs-up-fill"></i> Acknowledgements
                             </a>
                         </li>
@@ -53,6 +53,34 @@
         <div class="container">
             {% block content %} {% endblock %}
         </div>
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+                <hr />
+                <div class="row">
+                    <div class="col-8">
+                        <a class="mx-2" href="https://www.unimelb.edu.au" target="_blank">
+                            <img src="{{ url_for('static', filename='img/unimelb.jpeg') }}" alt="University of Melbourne" width="200" />
+                        </a>
+                        <a class="mx-2" href="https://www.unifei.edu.br" target="_blank">
+                            <img src="{{ url_for('static', filename='img/unifei.jpeg') }}" alt="UNIFEI" width="200" />
+                        </a>
+                    </div>
+                    <div class="col-4">
+                        <div class="d-flex flex-column align-items-end">
+                            <a href="https://opendefinition.org/okd" target="_blank">
+                                <img src="{{ url_for('static', filename='img/open-knowledge.png') }}" alt="This material is Open Knowledge" />
+                            </a>
+                            <p>
+                                <small>
+                                    Best viewed using <a href="https://www.google.com/chrome">Chrome</a> on 1280x1024 resolution and above
+                                </small>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
         <!-- Bootstrap JS -->
         <script src="{{ url_for('static', filename='bootstrap/bootstrap.bundle.min.js') }}"></script>
     </body>
