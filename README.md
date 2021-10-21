@@ -2,6 +2,8 @@
 
 ## TM-Align
 
+Downloaded from [Zhang Group website](https://zhanggroup.org/TM-align/)
+
 Build using below command in Mac:
 
 ```
@@ -25,3 +27,7 @@ Example command:
 ```
 python pdb-preprocessing.py /Users/albertdarmawan/Documents/gass-ppi/core/ 3nos.pdb
 ```
+
+## Dataset
+
+1. [Docking Benchmark 5.0](https://zlab.umassmed.edu/benchmark/benchmark5.0.html)
