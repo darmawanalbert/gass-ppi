@@ -3,3 +3,13 @@
 {% block header %}
     <h1 class="card-title">{% block title %} Acknowledgements {% endblock %}</h1>
 {% endblock %}
+
+{% block content %}
+    <p class="h4">This work is supported by:</p>
+    <div class="row">
+        <div class="col-12 my-2">
+            <img class="mx-4" src="{{ url_for('static', filename='img/unimelb.jpeg') }}" alt="University of Melbourne" width="200" />
+            <img class="mx-4" src="{{ url_for('static', filename='img/unifei.jpeg') }}" alt="UNIFEI" width="200" />
+        </div>
+    </div>
+{% endblock %}

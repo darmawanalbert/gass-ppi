@@ -3,3 +3,57 @@
 {% block header %}
     <h1 class="card-title">{% block title %} Protein-protein Interface Search {% endblock %}</h1>
 {% endblock %}
+
+{% block content %}
+    <form>
+        <div class="row mb-3">
+            <div class="col-4">
+                <div class="card text-dark bg-light h-100">
+                    <div class="card-header text-center">
+                        <p class="h4">Step 1 - Query Protein</p>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-title fw-bold">Please provide a query protein structure (in PDB format):</p>
+                        <div class="mb-3">
+                            <label for="formControlPdbFile" class="form-label">Upload your own PDB file</label>
+                            <input class="form-control" type="file" id="formControlPdbFile">
+                        </div>
+                        <p class="card-text text-center fw-bold">- or -</p>
+                        <div class="mb-3">
+                            <label for="formControlPdbId" class="form-label">Provide a 4-letter PDB ID</label>
+                            <input type="text" class="form-control" id="formControlPdbId" placeholder="e.g. 3NOS" aria-label="PDB ID">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card text-dark bg-light h-100">
+                    <div class="card-header text-center">
+                        <p class="h4">Step 2 - Settings</p>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-title fw-bold">Please select the reference atom:</p>
+                        <select class="form-select" aria-label="Reference Atom">
+                            <option value="lha" selected>Last Heavy Atom (LHA) of the side chain</option>
+                            <option value="alpha-carbon">&alpha;-Carbon</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-8">
+                <div class="alert alert-warning" role="alert">
+                    <p class="fw-bold">Disclaimer:</p>
+                    <p>No PDB file will be stored inside the system after being uploaded by the user</p>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="d-flex flex-column align-items-end">
+                    <button type="submit" class="btn btn-primary mb-2">Run GASS-PPI</button>
+                    <button type="submit" class="btn btn-secondary mb-2">Run Example</button>
+                </div>
+            </div>
+        </div>
+    </form>
+{% endblock %}

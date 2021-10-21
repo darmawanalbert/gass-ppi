@@ -5,8 +5,52 @@
 {% endblock %}
 
 {% block content %}
-    <h2>Abstract</h2>
-    <p>GASS-PPI is a tool to predict protein-protein interface</p>
-    <h2>Available Resources</h2>
-    <h2>Related Papers</h2>
+    <div class="row">
+        <div class="col-6">
+            <p class="h4">Abstract</p>
+            <p>GASS-PPI is a tool to predict protein-protein interface, given a PDB file</p>
+            <p class="h4">Related Papers</p>
+            <ul>
+                <li>
+                    <a href="http://bioinformatics.oxfordjournals.org/content/31/6/864" target="_blank">
+                        <p>
+                            IZIDORO, S. C.; DE MELO-MINARDI, R. C.; PAPPA, G. L. GASS: identifying enzyme active sites with genetic algorithms. Bioinformatics (Oxford. Print), v. 31, p. 864-870, 2015.
+                        </p>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://dl.acm.org/citation.cfm?id=2768436" target="_blank">
+                        <p>
+                            IZIDORO, SANDRO; LACERDA, ANISIO M.; PAPPA, GISELE L. MeGASS: Multi-Objective Genetic Active Site Search. Genetic and Evolutionary Computation Conference - GECCO 2015, Madrid, Spain.
+                        </p>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://doi.org/10.1093/nar/gkx337" target="_blank">
+                        <p>
+                            MORAES, J.P.A.; PAPPA G. L.; PIRES D.E.V.; IZIDORO, S.C.; GASS-WEB: a web server for identifying enzyme active sites based on genetic algorithms. Nucleic Acids Res 2017 gkx337. doi: 10.1093/nar/gkx337
+                        </p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-6">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <p class="h4">Available Resources</p>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <a class="btn btn-primary btn-sm" href="{{ url_for('ppi_search') }}" role="button">PPI Search</a>
+                        </td>
+                        <td>Performs protein-protein interface search using Docking Benchmark Dataset, given a PDB file</td>
+                    </tr>
+                </tbody>
+            </table>
+            <img class="img-fluid" src="{{ url_for('static', filename='img/gass-ppi-workflow.png') }}" alt="GASS-PPI Workflow" />
+        </div>
+    </div>
 {% endblock %}

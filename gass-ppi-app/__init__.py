@@ -6,10 +6,20 @@ app = Flask(__name__)
 def index():
     return render_template("index.html")
 
+# PPI Search pages
 @app.route("/ppi-search")
 def ppi_search():
     return render_template("ppi-search.html")
 
+@app.route("/ppi-search-results")
+def ppi_search_results():
+    return render_template("ppi-search-results.html")
+
+@app.route("/mol-viewer")
+def mol_viewer():
+    return render_template("mol-viewer.html")
+
+# Miscellaneous pages
 @app.route("/help")
 def help():
     return render_template("help.html")

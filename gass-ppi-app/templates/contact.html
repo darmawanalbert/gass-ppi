@@ -3,3 +3,63 @@
 {% block header %}
     <h1 class="card-title">{% block title %} Contact {% endblock %}</h1>
 {% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-5">
+            <p class="h4">Mailing Address</p>
+            <a href="https://findanexpert.unimelb.edu.au/profile/819396-douglas-pires" target="_blank" class="link-success">
+                Dr. Douglas E. V. Pires
+            </a>
+            <br />
+            <a href="http://lattes.cnpq.br/8024579151966887" target="_blank" class="link-success">
+                Prof. Sandro C. Izidoro
+            </a>
+            <br />
+            <p>
+                <br />
+                Federal University of Itajubá - UNIFEI
+                <br />
+                Campus Theodomiro Carneiro Santiago - Itabira - Brazil
+                <br />
+                Computer Engineering, Institute of Technological Sciences - ICT
+                <br />
+                Laboratory of Robotics, Intelligent and Complex Systems - RobSIC
+                <br />
+                Applied Computing  in Engineering - CAE
+                <br />
+                Rua Irmã Ivone Drumond, 200 - Distrito Industrial II
+                <br />
+                Itabira - Minas Gerais - Brazil
+                <br />
+                CEP: 35903-087
+                <br />
+            </p>
+            <p class="h4">Email Addresses</p>
+            <a href="mailto:douglas.pires@unimelb.edu.au">douglas.pires@unimelb.edu.au</a>
+            <br />
+            <a href="mailto:sandroizidoro@unifei.edu.br">sandroizidoro@unifei.edu.br</a>
+        </div>
+        <div class="card bg-light p-4 col-7">
+            <p class="h4">Get in Touch</p>
+            <p><em>Have you come across a problem on the website or have any requests or suggestions? Please report it here!</em></p>
+            <form>
+                <div class="row mb-3">
+                    <div class="col-6">
+                        <label for="formControlName" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="formControlName" placeholder="Full Name" aria-label="Name" />
+                    </div>
+                    <div class="col-6">
+                        <label for="formControlEmailAddress" class="form-label">Email Address</label>
+                        <input type="email" class="form-control" id="formControlEmailAddress" placeholder="Email Address (optional)" aria-label="Email Address" />
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="formControlMessages" class="form-label">Messages</label>
+                    <textarea class="form-control" id="formControlMessages" rows="3" placeholder="Messages here..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}
