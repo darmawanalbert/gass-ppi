@@ -4,3 +4,61 @@
     <h1 class="card-title">{% block title %} Help {% endblock %}</h1>
     <p class="card-text">How to use GASS-PPI</p>
 {% endblock %}
+
+{% block content %}
+    <div class="d-grid gap-2 d-md-flex justify-content-md-center mb-3">
+        <button class="btn btn-primary me-md-2" type="button" data-bs-target="#helpCarousel" data-bs-slide="prev">
+            Previous
+        </button>
+        <button class="btn btn-primary" type="button" data-bs-target="#helpCarousel" data-bs-slide="next">
+            Next
+        </button>
+    </div>
+    <div id="helpCarousel" class="carousel carousel-dark slide" data-bs-ride="carousel">
+        <!-- Carousel Indicators -->
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#helpCarousel" data-bs-slide-to="0" aria-label="Slide 1" class="active" aria-current="true"></button>
+            <button type="button" data-bs-target="#helpCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#helpCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <!-- Slides -->
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="row">
+                    <div class="col-7">
+                        <p class="h4">Page 1</p>
+                        <img class="img-fluid" src="{{ url_for('static', filename='img/gass-ppi-workflow.png') }}" alt="GASS-PPI Workflow" />
+                    </div>
+                    <div class="col-5">
+                        <p class="h4">About GASS-PPI</p>
+                        <p>GASS-PPI is a tool to predict protein-protein interface, given a PDB file</p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="row">
+                    <div class="col-7">
+                        <p class="h4">Page 2</p>
+                        <img class="img-fluid" src="{{ url_for('static', filename='img/gass-ppi-workflow.png') }}" alt="GASS-PPI Workflow" />
+                    </div>
+                    <div class="col-5">
+                        <p class="h4">About GASS-PPI</p>
+                        <p>GASS-PPI is a tool to predict protein-protein interface, given a PDB file</p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="row">
+                    <div class="col-7">
+                        <p class="h4">Page 3</p>
+                        <img class="img-fluid" src="{{ url_for('static', filename='img/gass-ppi-workflow.png') }}" alt="GASS-PPI Workflow" />
+                    </div>
+                    <div class="col-5">
+                        <p class="h4">About GASS-PPI</p>
+                        <p>GASS-PPI is a tool to predict protein-protein interface, given a PDB file</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
