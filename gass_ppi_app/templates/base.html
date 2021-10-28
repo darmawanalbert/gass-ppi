@@ -7,6 +7,8 @@
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/bootstrap.min.css') }}" />
         <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/bootstrap-icons.css') }}" />
+        <!-- Child-specific CSS -->
+        {% block extrastyle %} {% endblock %}
         <!-- Title (override) -->
         <title>{% block title %} {% endblock %}</title>
     </head>
@@ -90,5 +92,7 @@
         </footer>
         <!-- Bootstrap JS -->
         <script src="{{ url_for('static', filename='bootstrap/bootstrap.bundle.min.js') }}"></script>
+        <!-- Child-specific JS -->
+        {% block extrascript %} {% endblock %}
     </body>
 </html>
