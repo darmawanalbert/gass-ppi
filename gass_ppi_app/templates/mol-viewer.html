@@ -1,9 +1,26 @@
 {% extends 'base.html' %}
 
+{% block extrastyle %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='litemol/css/LiteMol-plugin.min.css') }}" />
+{% endblock %}
+
 {% block header %}
     <h1 class="card-title">{% block title %} LiteMol Viewer {% endblock %}</h1>
 {% endblock %}
 
 {% block content %}
+    <div id="litemol" style="height: 480px; margin-top: 90px; position: relative"></div>
+{% endblock %}
 
+{% block extrascript %}
+    <script src="{{ url_for('static', filename='litemol/js/LiteMol-plugin.min.js') }}"></script>
+    <script>
+        var plugin = LiteMol.Plugin.create({ target: '#litemol' });
+        plugin.loadMolecule({
+            id: '3nos',
+            url: 'https://files.rcsb.org/download/3NOS.pdb',
+            // Alternative URL: 'https://www.ebi.ac.uk/pdbe/entry-files/download/pdb3nos.ent',
+            format: 'pdb'
+        });
+    </script>
 {% endblock %}
