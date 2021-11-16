@@ -1,4 +1,7 @@
 from flask import Flask, render_template
+import sys
+import os
+sys.path.append(os.path.abspath(os.getcwd()))
 import gassppi
 
 app = Flask(__name__)

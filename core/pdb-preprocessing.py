@@ -44,12 +44,14 @@ if not list_pdbs:
     exit()
 cont = 1
 
-while(1):
-    reference_atom = input("Plase insert the reference atom (CA or LHA): ").upper().strip()
-    if reference_atom == 'CA' or reference_atom == 'LHA':
-        break
-    else:
-        print("Provided reference atom is not valid. Please choose beetween CA or LHA.\n")
+# while(1):
+#     reference_atom = input("Plase insert the reference atom (CA or LHA): ").upper().strip()
+#     if reference_atom == 'CA' or reference_atom == 'LHA':
+#         break
+#     else:
+#         print("Provided reference atom is not valid. Please choose beetween CA or LHA.\n")
+
+reference_atom = 'LHA'
 
 for nome_pdb in list_pdbs:
     print("{}: {}".format(cont, nome_pdb))
@@ -58,7 +60,7 @@ for nome_pdb in list_pdbs:
     linhas_pdb = arq_pdb.readlines()
     pdb_lines = linhas_pdb
     linhas_pdb = [linha.replace('\n', '') for linha in linhas_pdb]
-    nome_txt = nome_pdb[:4] + '+.txt'
+    nome_txt = nome_pdb[:4] + '_lha.pdb'
     arq_txt = open(caminho + nome_txt, 'w')
     ec_proteina = 'NULL'
     unp_proteina = 'NULL'
@@ -95,10 +97,10 @@ for nome_pdb in list_pdbs:
                 for j in range(i+1,len(pdb_lines)):
                     if pdb_lines[j][0:4] == 'ATOM' and pdb_lines[j][12:16].strip() == ra:
                         if pdb_lines[i][21:22] == pdb_lines[j][21:22] and pdb_lines[i][22:26].strip() == pdb_lines[j][22:26].strip():
-                            encontrou = True  
+                            encontrou = True
                 if encontrou == False:
                     if pdb_lines[i][16] != " ":
                         linhas_pdb[i] = linhas_pdb[i][:16] + " " + linhas_pdb[i][17:]
                     arq_txt.write("%s\n" % linhas_pdb[i])
-        
+
     arq_txt.close()
