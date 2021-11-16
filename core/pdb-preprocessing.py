@@ -60,7 +60,7 @@ for nome_pdb in list_pdbs:
     linhas_pdb = arq_pdb.readlines()
     pdb_lines = linhas_pdb
     linhas_pdb = [linha.replace('\n', '') for linha in linhas_pdb]
-    nome_txt = nome_pdb[:4] + '_lha.pdb'
+    nome_txt = nome_pdb[:-4] + '_lha.pdb'
     arq_txt = open(caminho + nome_txt, 'w')
     ec_proteina = 'NULL'
     unp_proteina = 'NULL'
