@@ -1,21 +1,22 @@
+from Bio.PDB.PDBParser import PDBParser
 from Bio.PDB.SASA import ShrakeRupley
 from model.Residue import Residue
+from utility.constant import lha_dict
 
-def load_pdb(pdb_id, pdb_directory_path, pdb_parser, lha_dict, reference_atom="lha"):
+def load_pdb(pdb_id, pdb_directory_path, reference_atom="lha"):
     """Load PDB
     Given a PDB ID and its directory, load the .pdb file using Bio.PDB module and generate a list of residue
 
     Parameters:
     pdb_id (str): The PDB ID for the protein structure
     pdb_directory_path (str): Absolute path to access the PDB file
-    pdb_parser (Bio.PDB.PDBParser.PDBParser): Bio.PDB Parser
-    lha_dict (dict{residue_name: atom_name}): Corresponding Last Heavy Atom for each amino acids
     reference_atom (str): Reference atom used ("lha" or "ca")
 
     Returns:
     list[Residue]: List of Residue object which constitutes the protein structure
 
     """
+    pdb_parser = PDBParser()
     residue_list = []
     amino_acid_list = list(lha_dict.keys())
     pdb_file_path = pdb_directory_path + pdb_id + ".pdb"
@@ -49,13 +50,3 @@ def load_pdb(pdb_id, pdb_directory_path, pdb_parser, lha_dict, reference_atom="l
         residue_list.append(current_atom)
     return residue_list
 
-residue_3nos = load_pdb("1AHW_l_u", dbd5_path, pdb_parser, lha_dict, "lha")
-print(type(residue_3nos))
-print(len(residue_3nos))
-for item in residue_3nos[:5]:
-    print(item.residue_name)
-    print(item.residue_sequence_position)
-    print(item.chain_name)
-    print(item.atom_name)
-    print(item.atom_coordinates)
-    print(item.residue_sasa)

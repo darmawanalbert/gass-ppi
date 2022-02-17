@@ -1,7 +1,7 @@
-repository_path = google_drive_directory_path
-dbd5_path = repository_path + "dbd5/"
-tmalign_path = repository_path + "TMalign"
-templates_path = repository_path + "templates/"
+repository_path = "/Users/albertdarmawan/Documents/gass-ppi/"
+dbd5_path = repository_path + "dataset/benchmark5/structures/"
+tmalign_path = repository_path + "TMalign/TMalign"
+templates_path = repository_path + "dataset/benchmark5/ppi-templates/"
 
 # Last Heavy Atom mapping
 lha_dict = {

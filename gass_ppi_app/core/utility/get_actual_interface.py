@@ -24,8 +24,8 @@ def get_actual_interface(residue_list_1, residue_list_2, distance_threshold=6.0)
 
     return interface_list
 
-ligand = load_pdb("1AHW_l_u", dbd5_path, pdb_parser, lha_dict, "lha")
-receptor = load_pdb("1AHW_r_u", dbd5_path, pdb_parser, lha_dict, "lha")
+ligand = load_pdb("1AHW_l_u", dbd5_path, "lha")
+receptor = load_pdb("1AHW_r_u", dbd5_path, "lha")
 sample_interface_list = get_actual_interface(ligand, receptor, 5.0)
 print(sample_interface_list)
 print(type(sample_interface_list))

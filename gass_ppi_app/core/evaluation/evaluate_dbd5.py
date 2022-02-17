@@ -1,6 +1,7 @@
 import numpy as np
 from utility.load_pdb import load_pdb
 from utility.draw_histogram import draw_histogram
+from utility.constant import dbd5_path
 from gassppi.verification import can_run_gass_ppi
 from gassppi.gass_ppi import gass_ppi
 from evaluation.evaluate_ppi_population import evaluate_ppi_population
@@ -45,7 +46,7 @@ def evaluate_dbd5(pdb_id_list, templates_dict, sanity_test=False, ranking_size=1
         # LIGAND
         # Step 1: Load the ligand's protein structure and PPI template
         ligand_pdb_id = ligand_pdb_id_list[idx]
-        ligand_pdb_structure = load_pdb(ligand_pdb_id, dbd5_path, pdb_parser, lha_dict, "lha")
+        ligand_pdb_structure = load_pdb(ligand_pdb_id, dbd5_path, "lha")
 
         ligand_interface_template = templates_dict[ligand_pdb_id]
         if sanity_test:
@@ -79,7 +80,7 @@ def evaluate_dbd5(pdb_id_list, templates_dict, sanity_test=False, ranking_size=1
         # RECEPTOR
         # Step 1: Load the receptor's protein structure and PPI template
         receptor_pdb_id = receptor_pdb_id_list[idx]
-        receptor_pdb_structure = load_pdb(receptor_pdb_id, dbd5_path, pdb_parser, lha_dict, "lha")
+        receptor_pdb_structure = load_pdb(receptor_pdb_id, dbd5_path, "lha")
 
         receptor_interface_template = templates_dict[receptor_pdb_id]
         if sanity_test:

@@ -1,7 +1,8 @@
 from utility.load_ppi_templates import load_ppi_templates
 from utility.constant import templates_path
-from evaluation.evaluate_dbd5 import evaluate_dbd5
 from utility.dbd5_constant import dbd5_ei_list, dbd5_es_list, dbd5_er_list, dbd5_a_list, dbd5_ab_list, dbd5_og_list, dbd5_or_list, dbd5_ox_list
+
+from evaluation.evaluate_dbd5 import evaluate_dbd5
 
 # Load a PPI template dictionary from .json files (to be used in the main program)
 a_templates_dict = load_ppi_templates(templates_path, "dbd5_a_templates.json")
