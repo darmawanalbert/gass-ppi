@@ -1,15 +1,11 @@
 from flask import Flask, render_template
-import sys
-import os
-sys.path.append(os.path.abspath(os.getcwd()))
-import gassppi
 
 app = Flask(__name__)
 
 @app.route("/")
 def index():
-    name = "Albert"
-    score = gassppi.add(10,20)
+    name = "Test"
+    score = 30
     return render_template("index.html", name=name, score=score)
 
 # PPI Search pages
