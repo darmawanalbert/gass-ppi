@@ -1,3 +1,5 @@
+from utility.constant import amino_acid_list
+
 def can_run_gass_ppi(input_protein_structure, interface_template):
     """Can Run GASS PPI?
     Defensive Programming effort. Perform pre-check before running GASS-PPI.

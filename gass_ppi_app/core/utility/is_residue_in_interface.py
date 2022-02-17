@@ -1,3 +1,5 @@
+from utility.is_same_residue import is_same_residue
+
 def is_residue_in_interface(residue, interface):
     """Is Residue In Interface
     Given a residue object and an interface, check whether this residue object exists inside the interface

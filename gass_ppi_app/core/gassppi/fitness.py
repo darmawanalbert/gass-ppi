@@ -1,5 +1,6 @@
 import numpy as np
-
+from model.Residue import Residue
+from utility.euclidean_distance import euclidean_distance
 
 def calculate_fitness_score(individual, interface_template):
     """Calculate Fitness Score

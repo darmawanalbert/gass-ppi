@@ -1,3 +1,6 @@
+from Bio.PDB.SASA import ShrakeRupley
+from model.Residue import Residue
+
 def load_pdb(pdb_id, pdb_directory_path, pdb_parser, lha_dict, reference_atom="lha"):
     """Load PDB
     Given a PDB ID and its directory, load the .pdb file using Bio.PDB module and generate a list of residue

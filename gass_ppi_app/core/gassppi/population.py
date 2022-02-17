@@ -1,4 +1,6 @@
 import random
+from utility.constant import amino_acid_list
+from utility.is_residue_in_interface import is_residue_in_interface
 
 def generate_initial_population(input_protein_structure, interface_template, population_size):
     """Generate Initial Population

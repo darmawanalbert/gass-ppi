@@ -1,3 +1,9 @@
+from gassppi.population import generate_initial_population
+from gassppi.fitness import calculate_fitness_score
+from gassppi.selection import deterministic_tournament_selection
+from gassppi.crossover import crossover
+from gassppi.mutation import mutation
+
 def gass_ppi(input_protein_structure, interface_template, population_size=150, number_of_generations=100, crossover_probability=0.9, mutation_probability=0.9, tournament_size=2, number_of_tournament=50):
     """GASS-PPI Method
     Given the input protein structure and the interface template, perform genetic algorithms

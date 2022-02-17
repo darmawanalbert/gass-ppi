@@ -1,6 +1,8 @@
+from evaluation.evaluate_ppi import evaluate_ppi
+
 def evaluate_ppi_population(actual_interface, population_list, protein_structure, ranking_size=1):
     """Evaluate PPI Population
-    Given a population of PPI produced by GASS-PPI method, evaluate n individual 
+    Given a population of PPI produced by GASS-PPI method, evaluate n individual
     (where n is the ranking_size) using evaluate_ppi method and return the best individual.
     For now, the "best" is indicated by the highest MCC
 
